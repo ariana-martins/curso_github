@@ -6,7 +6,7 @@ Curso GitHub Sujeito programador gratuito realizado em 09/01/2025 até 16/01/202
 - quando abrir o github em novo computador após fazer o download de Git:
 C:\Users\arianamartins> git config --global user.name "ariana-martins"
 
-C:\Users\arianamartins> git config --global user.email "arianaestrelar@gmail.com"
+C:\Users\arianamartins> git config --global user.email "meu-email@gmail.com"
 
 - Ver as credenciais do git que sempre será utilizado, e que recem foi instalado no git e no computador, ou seja será utilizado no login, saber se realmente foi configurado:
 C:\Users\arianamartins> git config user.name
@@ -514,19 +514,19 @@ C:\Projetos\cursoGit\clone1\
 C:\Projetos\cursoGit\projetoExemploGit> git log
 -- Irá aparecer o seguinte texto, se aparecer ":" é que continua os logs e pode clicar "Enter" até aparecer "(END)" no final dos logs, com cada comentário do último ao primeiro comentário de commit
 commit 42edb839216c2a0636d76f9b7afcff8200474cb0 (HEAD -> main, origin/main)
-Author: ariana-martins <arianaestrelar@gmail.com>
+Author: ariana-martins <meu-email@gmail.com>
 Date:   Mon Jan 13 14:56:54 2025 -0300
 
     Arrumando descricao do readme
 
 commit e379ce71a4966b98ededc30154b6e00dc4123d1f
-Author: ariana-martins <arianaestrelar@gmail.com>
+Author: ariana-martins <meu-email@gmail.com>
 Date:   Fri Jan 10 18:10:00 2025 -0300
 
     Create README.md
 
 commit c6b942d92d635d3b9950530aa2ea83df5e5b9300
-Author: ariana-martins <arianaestrelar@gmail.com>
+Author: ariana-martins <meu-email@gmail.com>
 Date:   Fri Jan 10 16:38:58 2025 -0300
 :
 
@@ -568,19 +568,19 @@ nothing to commit, working tree clean
 C:\Projetos\cursoGit\projetoExemploGit> git log
 -- Irá aparecer o seguinte texto, apareceu o último commit comentado por primeiro, com data e hora junto com os outros logs de outros comentários dos commit
 commit 79d80bce931e01e3adad0deac2b56e69bdb9e41e (HEAD -> main)
-Author: ariana-martins <arianaestrelar@gmail.com>
+Author: ariana-martins <meu-email@gmail.com>
 Date:   Tue Jan 14 11:10:32 2025 -0300
 
     Tirando alguns nomes da nossa lista
 
 commit 42edb839216c2a0636d76f9b7afcff8200474cb0 (origin/main)
-Author: ariana-martins <arianaestrelar@gmail.com>
+Author: ariana-martins <ameu-email@gmail.com>
 Date:   Mon Jan 13 14:56:54 2025 -0300
 
     Arrumando descricao do readme
 
 commit e379ce71a4966b98ededc30154b6e00dc4123d1f
-Author: ariana-martins <arianaestrelar@gmail.com>
+Author: ariana-martins <meu-email@gmail.com>
 :
 
 - Para sair do log, digitar a letra "q"
