@@ -1,0 +1,794 @@
+Curso GitHub Sujeito programador gratuito realizado em 09/01/2025 até 16/01/2025
+** Passo a passo **
+
+** Instalando Git **
+- Abrir CMD (prompt de comando) e digitar:
+- quando abrir o github em novo computador após fazer o download de Git:
+C:\Users\arianamartins> git config --global user.name "ariana-martins"
+
+C:\Users\arianamartins> git config --global user.email "arianaestrelar@gmail.com"
+
+- Ver as credenciais do git que sempre será utilizado, e que recem foi instalado no git e no computador, ou seja será utilizado no login, saber se realmente foi configurado:
+C:\Users\arianamartins> git config user.name
+
+C:\Users\arianamartins> git config user.email 
+
+
+** Iniciando repositório (repo) do Git **
+
+- Todos arquivos dentro dessa pasta agora serão reconhecidos pelo git como um projeto
+- No computador, por exemplo no windows10, criar uma pasta (por enquanto vazia) por exemplo no diretório C:\Projetos\cursoGit\projetoExemploGit
+- Agora abrir CMD (prompt de comando) e digitar o local do projeto da pasta recém criada:
+- Para ver o status do projeto, digitar:
+C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer na primeira vez a seguinte frase, que vai dar um erro, não tem repositório aqui dentro nesse repositório recém criado: 
+fatal: not a git repository (or any of the parent directories): .git
+
+OBS.: Pode ser realizado também pelo caminho, pasta e diretório recém criado 
+- No computador, por exemplo no windows10, criar uma pasta (por enquanto vazia) por exemplo no diretório C:\Projetos\cursoGit\projetoExemploGit
+- Acessar com o botão direito do mouse dentro da pasta "projetoExemploGit" e clicar na opção "Git Bash Here"
+- Feito isso, agora utiliza o comando para ver o status do projeto, digitar:
+C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer na primeira vez a seguinte frase, que vai dar um erro, não tem repositório aqui dentro nesse repositório recém criado: 
+fatal: not a git repository (or any of the parent directories): .git
+
+- Seguindo o processo de iniciar o git, pelo comando CMD, digitar para iniciar o repositório:
+C:\Projetos\cursoGit\projetoExemploGit> git init
+-- Irá aparecer a seguinte frase, que foi inicializado o repositório, aqui dentro da nossa pasta:
+Initialized empty Git repository in C:/Projetos/cursoGit/projetoExemploGit/.git/ 
+-- Se olhar na pasta do diretório no windows10 não irá aparecer nada, pois é uma pasta oculta. Lembrete: Nunca vai mexer nela (a pasta oculta do .git/)
+
+- Agora, iremos ver novamente no CMD o status do projeto, digitar:
+C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que ainda não tenho nenhum commit, nenhum arquivo ainda:
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+- Iremos passar o projeto para o editor de código fonte, do Visual Studio Code (VSCode)
+- Abrir o VSCode
+- Abrir no windows10 o diretório: 
+C:\Projetos\cursoGit\
+- Pegar a pasta do projeto "projetoExemploGit" e arrastar até o VSCode, e então será aberto o projeto no VSCode
+
+- Agora no VSCode
+- Para abrir o Terminal Novo, para iniciar a compilar o código do projeto, acessar, na pasta do projeto "projetoExemploGit", mas no menu do VSCode:
+--Terminal 
+--New Terminal (Novo Terminal)
+
+- Abriu o Terminal, agora na linha de comando do VSCode, digitar:
+- Mas antes observar no menu do Terminal, qual local padrão será utilizado para codificar, exemplo, PowerShell, Git Bash, CMD (Command Prompt) no VSCode:
+OBS.: Deixei padrão CMD
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que ainda não tenho nenhum commit, nenhum arquivo ainda:
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+- Agora na pasta do projeto "projetoExemploGit" no VSCode 
+- Criar um arquivo, no menu esquerdo, exemplo de arquivo "nomes.txt", digitar alguma coisa dentro do arquivo de teste e Salvar.
+
+- De volta ao CMD do VSCode, digitar:
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, junto com nosso arquivo recém criado "nomes.txt"
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        nomes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+** Verificando modificações no VSCode, do projeto recém criado **
+
+- Agora na pasta do projeto "projetoExemploGit" no VSCode 
+- Criar um novo arquivo, no menu esquerdo, exemplo de arquivo "empresas.txt", digitar alguma coisa dentro do arquivo de teste e Salvar.
+
+- De volta ao CMD do VSCode, digitar:
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, junto com nosso arquivo recém criado "nomes.txt" e "empresas.txt", verificando que ainda não foi realizado nenhum commit ainda:
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        empresas.txt
+        nomes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+- Agora iremos iniciar o primeiro commit do projeto
+- No terminal do VSCode, digitar:
+PS C:\Projetos\cursoGit\projetoExemploGit> git add nomes.txt
+
+- Vamos ver agora como fica o status do Git, digitar: 
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, "new file: nomes.txt" (arquivo realizado o commit, que está sendo monitorado)
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   nomes.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        empresas.txt
+
+- Verificando no menu a esquerda do projeto, os arquivos tem observações diferentes
+- Arquivo "empresas.txt" tem um "U" ao lado, quer dizer que não está sendo monitorado
+- Arquivo "nomes.txt" depois de realizar o como "git add", aparece a letra "A" que foi adicionado, arquivo está sendo monitorado
+
+- Incluindo mais coisas dentro do arquivo nomes.txt, salvando, e depois realizando novamente o comando:
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, "modified: nomes.txt" (arquivo realizado o commit, que está sendo monitorado e foi modificado)
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   nomes.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   nomes.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        empresas.txt
+
+- Fazendo o commit de todos os arquivos, digitar:
+C:\Projetos\cursoGit\projetoExemploGit> git add .
+
+- Agora iremos ver novamente como ficou o status do projeto, digitar no CMD do VSCode
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, com todas as alterações do commit realizado (dois novos arquivos foram criados):
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   empresas.txt
+        new file:   nomes.txt
+
+
+** Salvando commit **
+
+- Se quiser salvar apenas um arquivo é preciso digitar o nome do arquivo, e acrescentar algum tipo de mensagem junto (entre aspas após o -m), como por exemplo:
+PS C:\Projetos\cursoGit\projetoExemploGit> git commit empresas.txt -m "Estou criando o arquivo com nome de empresas"
+-- Irá aparecer o seguinte texto, ou seja, uma inserção um arquivo foi comentado
+1 file changed, 1 insertion(+)
+create mode 100644 empresas.txt
+ 
+- Verificando novamente o Status do projeto
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, "nomes.txt" que está esperando para ser comentado
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   nomes.txt
+		
+- Realizando um novo Commit
+PS C:\Projetos\cursoGit\projetoExemploGit> git commit nomes.txt -m "Criando os nomes do curso"
+-- Irá aparecer o seguinte texto, observando que após o commit no menu a esquerda do projeto os arquivos não possuem mais a letra "A" ao lado, pois foi criado o commit e depois salvo o commit
+[master 019742d] Criando os nomes do curso
+ 1 file changed, 3 insertions(+)
+ create mode 100644 nomes.txt
+ 
+- Conferindo novamente o Status do projeto
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, observando que agora foram realizados todos os commit, já foi tudo comentado
+On branch master
+nothing to commit, working tree clean
+
+- Agora vamos fazer alterações no arquivo "nomes.txt" e criar um novo arquivo em HTML "index.html"
+- Abrir o arquivo "nomes.txt" e fazer alteração, após isso Salvar
+- Criar um arquivo "index.txt", incluir algum código neste arquivo e depois Salvar
+
+- Feito os passos a seguir veremos como ficou no menu esquerdo ao lado de cada arquivo
+-- No arquivo "index.html" agora obervamos que tem a letra "U", ainda não foi realizado commit
+-- No arquivo "nomes.txt" agora obervamos que tem a letra "M", arquivo foi modificado e não foi salvo/comentado com o commit
+
+- Observando o status da situação do arquivo modificado e criado
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que o arquivo "nomes.txt" foi modificado e o arquivo "index.html" ainda não está sendo monitorado pelo commit
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   nomes.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Agora vamos comentar todos os arquivos de uma vez só, não esquendo de adicionar o commit antes de fazer o comentário
+PS C:\Projetos\cursoGit\projetoExemploGit> git add .
+PS C:\Projetos\cursoGit\projetoExemploGit> git commit -m "Criando nossa pagina home do projeto"
+-- Irá aparecer o seguinte texto, que 2 arquivos foram modificados
+[master 805850e] Criando nossa pagina home do projeto
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 index.html
+ 
+- Vamos observar agora como ficou o status do projeto
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que está tudo limpo, a gente não tem mais arquivo para ser alterado/comentado/adicionado, observando também que, no menu esquerdo os arquivos não possuem mais letras "U" ou "M" no lado de cada arquivo, tudo salvo no repositório.
+On branch master
+nothing to commit, working tree clean
+
+
+** Conhecendo Github (considerando que já foi criado uma conta no https://github.com/) **
+
+- Serviço para hospedar/gerenciar repositórios.
+
+
+** Enviando repositório ao github **
+
+- Agora iremos criar um repositório no https://github.com/ do seu perfil
+- No menu acima do perfil do github, clicar na flechinha ao lado do sinal de "+" e irá aparacer e clicar em "New repository"
+- Preencher Repository name (obs.: não pode haver espaço no titulo)
+- Description (descrição é opcional)
+- Marcar Public (Código público) ou Private (Código Privado)
+- Em "Initialize this repository with" pergunta se quero iniciar o repositório com alguma coisa, é opcional, por enquanto não precisa marcar nada
+- Clicar em "Create repository" será criado nosso repositório "curso_github"
+
+- Criado o repositório, seguiremos o passo a passo que apareceu no repositório recém criado no https://github.com/
+- Nesse caso do curso, já seguimos alguns passo a passo anteriormente no terminal do VSCode do nosso projeto
+
+- Seguiremos da seguinte forma, de volta ao nosso projeto no VSCode
+- No terminal do VSCode digitar:
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, no meu caso não tenho mais nada para comentar
+On branch master
+nothing to commit, working tree clean
+
+- Faremos mais um teste
+- No VSCode incluir mais coisas no arquivo index.html e Salvar
+- Vamo ver agora como ficou o Status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que o arquivo "index.html" foi modificado
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Vamos adicionar o commit 
+C:\Projetos\cursoGit\projetoExemploGit> git add .
+
+- Vamos ver a diferença no Status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, analisando que a linha "(use "git add <file>..." to update what will be committed)" não aparece mais no nosso status, o commit foi adicionado, após modificado, mas ainda não foi comentado
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+- Agora vamos adicionar um  comentário no nosso commit
+C:\Projetos\cursoGit\projetoExemploGit> git commit -m "colocando h2 na home"
+-- Irá aparecer o seguinte texto, 
+[master 19ece8d] colocando h2 na home
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ 
+ - Vamos ver novamenete a diferença no Status e se falta adicionar e/ou comentar mais alguma coisa
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, tudo certo todos os arquivos já foram adicionados e comentados
+On branch master
+nothing to commit, working tree clean
+
+- Seguindo o passo a passo no nosso repositório no https://github.com/ do seu perfil
+- Iremos copiar a seguinte linha "git branch -M main", e colar no terminal do VSCode1:
+C:\Projetos\cursoGit\projetoExemploGit> git branch -M main
+
+- Próxima linha copiar do repositório do github e colar no terminal do VSCode
+C:\Projetos\cursoGit\projetoExemploGit> git remote add origin https://github.com/ariana-martins/curso_github.git
+
+- Seguindo copiando outra linha, copiar do repositório do github e colar no terminal do VSCode
+C:\Projetos\cursoGit\projetoExemploGit> git push -u origin main
+-- Se aparacer uma caixina, é para incluir o username e senha, primeira vez no computador que está utilizando o repositório do https://github.com/ com o código no terminal do VSCode, após isso, vai aparecer o seguinte texto
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (13/13), 1.21 KiB | 206.00 KiB/s, done.
+Total 13 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ariana-martins/curso_github.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+- Agora podemos ver como ficou no repositório no nosso perfil https://github.com/ariana-martins/curso_github
+
+
+** Adicionando novos arquivos **
+
+- Incluindo mais coisas dentro dos arquivos, e criando um novo arquivo no projeto do VSCode
+- Alterado os documentos "nomes.txt" e "index.html" e acrescentado arquivo "a.txt"
+
+- Verificando o Status do projeto
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, arquivos modificados e arquivo novo criado
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   nomes.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Adicionando o commit
+C:\Projetos\cursoGit\projetoExemploGit> git add .
+
+- Observando o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que um arquivo foi criado e os outros arquivos modificados
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   a.txt
+        modified:   index.html
+        modified:   nomes.txt
+
+- Agora vamos comentar o commit
+C:\Projetos\cursoGit\projetoExemploGit> git commit -m "Criando novas funcionalidades na home com paragrafo"
+-- Irá aparecer o seguinte texto, que 3 arquivos foram comentados
+[main c6b942d] Criando novas funcionalidades na home com paragrafo
+ 3 files changed, 11 insertions(+), 2 deletions(-)
+ create mode 100644 a.txt
+ 
+- Observando novamente o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, veremos que não tem mais arquivos a ser adicionado ou comentado
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)  
+
+nothing to commit, working tree clean
+
+- De volta ao perfil do github no nosso projeto acessando o projeto em https://github.com/ariana-martins/curso_github 
+- Veremos que o commit alterado no VSCode ainda não foi para nosso repositório do nosso perfil do github
+
+- De volta ao terminal do VSCode
+- Enviando o commit para nosso repositório, digitar:
+PS C:\Projetos\cursoGit\projetoExemploGit> git push
+-- Irá aparecer o seguinte texto, aqui deu tudo certo, enviou o commit para nosso repositório e também apareceu o link do nosso repositório
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 534 bytes | 178.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0        
+To https://github.com/ariana-martins/curso_github.git
+   19ece8d..c6b942d  main -> main
+
+- Voltando no nosso repositório
+- Acessar https://github.com/ariana-martins/curso_github e veremos as modificações do commit
+
+
+** Recebendo alterações (pull) **
+
+- Acessando https://github.com/ariana-martins/curso_github
+- Clicar na opção "Add file" e adicionar um novo arquivo clicando "Create new file"
+- Incluiremos por exemplo o nome do arquivo como "README.md" e acrescentaremos um texto dentro do arquivo
+- Para Salvar o arquivo clicar em "Commit changes..."
+
+- Agora veremos como buscar as informações no meu repositório
+- Sincronizando o nosso repositório
+- De volta ao nosso terminal do VSCode, digitar:
+PS C:\Projetos\cursoGit\projetoExemploGit> git pull
+-- Irá aparecer o seguinte texto, podemos ver que acrescentou nosso arquivo "README.md" dentro do nosso projeto (observar agora no VSCode, no menu a esquerda, foi sincronizado/acrescentado)
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 939 bytes | 52.00 KiB/s, done.
+From https://github.com/ariana-martins/curso_github
+   c6b942d..e379ce7  main       -> origin/main
+Updating c6b942d..e379ce7
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md  
+ 
+ 
+ ** Clonando repositórios **
+ 
+- Editar o arquivo README.md no VSCode e Salvar
+- Vamos verificar o status do código, através do terminal do VSCode:
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que o arquivo README.md foi modificado
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Agora vamos adicionar e comentar o commit, digitando:
+PS C:\Projetos\cursoGit\projetoExemploGit> git add .
+
+PS C:\Projetos\cursoGit\projetoExemploGit> git commit -m "Arrumando descricao do readme"
+-- Irá aparecer o seguinte texto, commit adicionado e comentado
+[main 42edb83] Arrumando descricao do readme
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+ 
+- Veremos como ficou o status agora
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, tudo limpo, não tem mais nada para adicionar
+[main 42edb83] Arrumando descricao do readme
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Projetos\cursoGit\projetoExemploGit>git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+- Vamos enviar o commit para nosso projeto/repositório do github, que irá sincronizar
+PS C:\Projetos\cursoGit\projetoExemploGit> git push
+-- Irá aparecer o seguinte texto, que enviou a nossa edição sincronizado
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 340 bytes | 85.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0       
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ariana-martins/curso_github.git
+   e379ce7..42edb83  main -> main
+   
+- Vamos verificar as alterações no repositório https://github.com/ariana-martins/curso_github
+
+- Clonando o projeto
+- No windows abrir o diretório do projeto como C:\Projetos\cursoGit\
+- Criar uma nova pasta como "clone1"
+- Abrir o terminal CMD e ir até a pasta clone1, irá ficar assim
+C:\Projetos\cursoGit\clone1>
+
+- Digamos que queremos clonar outro projeto, mas neste momento iremos ao nosso repositório e iremos clonar o projeto 
+- Acessar https://github.com/ariana-martins/curso_github
+- Clicar em "Code", que irá aparecer a opção "Clone"
+- Iremos pegar o link do código em "HTTPS"
+
+- Agora no terminal do CMD digitar com o arquivo do clone copiado como:
+C:\Projetos\cursoGit\clone1> git clone https://github.com/ariana-martins/curso_github.git
+-- Irá aparecer o seguinte texto, clone realizado
+Cloning into 'curso_github'...
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (24/24), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 24 (delta 3), reused 20 (delta 1), pack-reused 0 (from 0)
+Receiving objects: 100% (24/24), done.
+Resolving deltas: 100% (3/3), done.
+
+- No diretório do nosso clone no windows10, vamos observar que foi clonado todo o repositório de https://github.com/ariana-martins/curso_github em 
+C:\Projetos\cursoGit\clone1\curso_github
+
+- Como estamos no mesmo computador, e é o mesmo projeto, iremos deletar a pastinha "curso_github" do nosso clone1, que ficará como:
+C:\Projetos\cursoGit\clone1
+
+- Agora veremos o clone só com arquivos do repositório e não junto com o nome do projeto
+- No terminal do CMD seguir o mesmo passo do clone anterior, mas agora acrescenta um "."(ponto) após o link do projeto, que direcionará o clone para apenas para os arquivos do repositório
+C:\Projetos\cursoGit\clone1> git clone https://github.com/ariana-martins/curso_github.git .
+-- Irá aparecer o seguinte texto, clone realizado
+Cloning into '.'...
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (24/24), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 24 (delta 3), reused 20 (delta 1), pack-reused 0 (from 0)
+Receiving objects: 100% (24/24), done.
+Resolving deltas: 100% (3/3), done.
+
+- Novamente no diretório do nosso clone no windows10, vamos observar que foi clonado todo o repositório de https://github.com/ariana-martins/curso_github porém agora só os arquivos dentro da nossa pasta em "clone1" em:
+C:\Projetos\cursoGit\clone1\
+
+
+** Acessando logs (git log) **
+
+- Para acessar logs das nossas alterações feito no projeto, em ordem cronológica
+-- Caso você parou de férias e não lembra mais o seu último commit realizado
+
+- Abrir o Terminal dentro do projeto no VSCode e digitar
+C:\Projetos\cursoGit\projetoExemploGit> git log
+-- Irá aparecer o seguinte texto, se aparecer ":" é que continua os logs e pode clicar "Enter" até aparecer "(END)" no final dos logs, com cada comentário do último ao primeiro comentário de commit
+commit 42edb839216c2a0636d76f9b7afcff8200474cb0 (HEAD -> main, origin/main)
+Author: ariana-martins <arianaestrelar@gmail.com>
+Date:   Mon Jan 13 14:56:54 2025 -0300
+
+    Arrumando descricao do readme
+
+commit e379ce71a4966b98ededc30154b6e00dc4123d1f
+Author: ariana-martins <arianaestrelar@gmail.com>
+Date:   Fri Jan 10 18:10:00 2025 -0300
+
+    Create README.md
+
+commit c6b942d92d635d3b9950530aa2ea83df5e5b9300
+Author: ariana-martins <arianaestrelar@gmail.com>
+Date:   Fri Jan 10 16:38:58 2025 -0300
+:
+
+- Para sair do log digitar a letra "q" que volta para a linha de comando no terminal do VSCode
+
+- Iremos fazer um novo teste
+- Modificar o arquivo "nomes.txt" e Salvar
+
+- No terminal do VSCode digitar o status 
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que o arquivo "nomes.txt" foi modificado
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   nomes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Vamos adicionar e comentar o commit
+PS C:\Projetos\cursoGit\projetoExemploGit> git add .
+PS C:\Projetos\cursoGit\projetoExemploGit> git commit -m "Tirando alguns nomes da nossa lista"
+-- Irá aparecer o seguinte texto, commit adicionado e comentado
+[main 79d80bc] Tirando alguns nomes da nossa lista
+ 1 file changed, 2 deletions(-)
+ 
+- Vamos ver como ficou o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, tudo certo
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)  
+
+nothing to commit, working tree clean
+
+- Vamos ver como ficou o log agora
+C:\Projetos\cursoGit\projetoExemploGit> git log
+-- Irá aparecer o seguinte texto, apareceu o último commit comentado por primeiro, com data e hora junto com os outros logs de outros comentários dos commit
+commit 79d80bce931e01e3adad0deac2b56e69bdb9e41e (HEAD -> main)
+Author: ariana-martins <arianaestrelar@gmail.com>
+Date:   Tue Jan 14 11:10:32 2025 -0300
+
+    Tirando alguns nomes da nossa lista
+
+commit 42edb839216c2a0636d76f9b7afcff8200474cb0 (origin/main)
+Author: ariana-martins <arianaestrelar@gmail.com>
+Date:   Mon Jan 13 14:56:54 2025 -0300
+
+    Arrumando descricao do readme
+
+commit e379ce71a4966b98ededc30154b6e00dc4123d1f
+Author: ariana-martins <arianaestrelar@gmail.com>
+:
+
+- Para sair do log, digitar a letra "q"
+
+
+** Revertendo arquivos com checkout **
+
+- Criando um exemplo, iremos modificar e salvar o arquivo "index.html" no projeto do VSCode
+- Verificar o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, mostrou que o arquivo "index.html" foi modificado
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Vamos apagar o texto que recém acrescentamos no arquivo "index.html" e salvar
+- Se verificar novamente o status, ainda vai aparecer como arquivo "index.html" modificados
+C:\Projetos\cursoGit\projetoExemploGit> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Para voltar no arquivo de onde parou, então daremos o checkout e digitar
+C:\Projetos\cursoGit\projetoExemploGit> git checkout index.html
+-- Irá aparecer o seguinte texto, ele vai voltar ao estado inicial
+Updated 1 path from the index
+
+- Veremos agora como ficou o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, tudo limpo não tem mais nenhum commit a ser adicionado e comentado
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)  
+
+nothing to commit, working tree clean
+
+- Vamos adicionar e alterar mais coisas no nosso arquivo "index.html" e salvar
+- Iremos ver novamente como ficou o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, arquivo "index.html" modificado
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Iremos apagar uma parte do texto do arquivo "index.html" pois "não queremos mais" e Salvar
+- Veremos o status novamente
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, que o arquivo "index.html" ainda foi modificado
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Vamos dar um espaço em uma linha no nosso arquivo "index.html" e Salvar
+- Agora vamos digitar novamente o checkout e ver como ficou nosso arquivo "index.html"
+C:\Projetos\cursoGit\projetoExemploGit> git checkout index.html
+-- Irá aparecer o seguinte texto, ele vai voltar ao estado inicial
+Updated 1 path from the index
+
+- Percebemos que o arquivo "index.html" removeu a linha de texto que adicionamos após o checkout, voltou no estado anterior do código antes da ultima modificação
+
+- Vamos ver como ficou o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, tudo limpo não há mais nada para comentar
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)  
+
+nothing to commit, working tree clean
+
+
+** Como Ignorar arquivos **
+
+- Criaremos uma pasta como node_modules dentro do projeto no VSCode
+- No menu a esquerda, criar pasta "node_modules" 
+- Dentro da pasta "node_modules" criar um arquivo como exemplo "secreto.txt"
+- Incluindo texto dentro do arquivo "secreto.txt" e salvar
+
+- No projeto do VSCode, incluir um arquivo como ".env.local" incluir textos e salvar
+
+- Criar um arquivo como ".gitignore" no projeto do VSCode que irá ignorar os arquivos para ser enviado ao repositório do github
+
+- Agora dentro do arquivo ".gitignore" acrescentar o nome do arquivo ".env.local" e salvar
+- Também incluiremos o diretório da pasta do projeto "/node_modules" no arquivo ".gitignore" e salvar
+
+- Adicionar e comentar o commit das alterações
+PS C:\Projetos\cursoGit\projetoExemploGit> git add .
+PS C:\Projetos\cursoGit\projetoExemploGit> git commit -m "Adicionando gitignore ao projeto"
+-- Irá aparecer o seguinte texto, commit adicionado e comentado do ".gitignore"
+[main 13180e7] Adicionando gitignore ao projeto
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+ 
+- Vamos observar o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, tudo limpo não tem mais nada para adicionar e comentar
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)   
+
+nothing to commit, working tree clean
+
+- Vamos enviar agora o commit ao nosso repositório do github
+PS C:\Projetos\cursoGit\projetoExemploGit> git push
+-- Irá sincronizar o projeto e aparecer o seguinte texto,
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 600 bytes | 300.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0        
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/ariana-martins/curso_github.git
+   42edb83..13180e7  main -> main
+   
+- Vamos acessar nosso projeto no github https://github.com/ariana-martins/curso_github
+-- Aqui obervamos que só o arquivo .gitignore foi enviado para nosso repositório do projeto do github e ignorou os arquivos ".env.local" e a pasta e seus respectivo arquivo "/node_modules"
+
+
+** Voltando e dando reset **
+
+- Exemplo que se percebi se foi feito tudo errado, e quero dar um reset, voltar ao estado inicial
+
+- Primeiro, vamos conferir como está o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, não tenho nada a ser adicionado e comentado no commit
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean 
+
+- Iremos fazer uma simulação, iniciando acrescentar mais coisas no arquivo "index.html" e salvar
+- Vamos acrescentar mais alguns nomes no arquivo "nomes.txt" e salvar
+
+- Agora iremos ver novamente como ficou o status 
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, apareceu os arquivos modificados "index.html" e "nomes.txt"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   nomes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Vamos acrescentar mais texto no arquivo "empresas.txt" e salvar
+- E veremos novamente o status
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, percebemos que o arquivo "empresas.txt" também foi modificado
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   empresas.txt
+        modified:   index.html
+        modified:   nomes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+- Supondo que fizemos errado, vamos tentar reverter a situação do código
+- No terminal do VSCode digitar, ATENÇÃO tomar cuidado ao digitar isso, pois irá sumir tudo que codificou por último:
+PS C:\Projetos\cursoGit\projetoExemploGit> git reset --hard origin/main
+-- Irá aparecer o seguinte texto, atualizou até o ultimo projeto que foi realizado anteriormente, olhando no código que foi "apagado" todas as modificações feito anteriormente, do último status, voltou ao estado inicial
+HEAD is now at 13180e7 Adicionando gitignore ao projeto
+
+- Veremos como ficou o status final
+PS C:\Projetos\cursoGit\projetoExemploGit> git status
+-- Irá aparecer o seguinte texto, não há mais nada a ser adicionado e comentado no commit, nenhuma alteração realizada
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+** Finalizando o módulo **
+
+- FIM!
+
+
+
